@@ -17,8 +17,7 @@ UART_PATH = '/dev/serial0'
 GPS_Realtime_txt_PATH = "gps_realtime.txt"
 
 #Testdata
-#la = 4222.7992
-#lo = 14101.9047
+
 def s_main():
     global pro_count
     global GPS_Realtime_txt_PATH
@@ -43,7 +42,6 @@ def i_GPS_UART_getval():
     #安定版ではコメントアウトしてください
     ser = serial.Serial(UART_PATH,9600,timeout = 0.5)
     Data = ser.readline()
-#    Data = 	["'$GPGGA", '204628.000', '4222.8112', 'N', '14102.0097', 'E', '2', '11', '0.94', '61.5', 'M', '34.5', 'M', '', "*5C\\r\\n'"]
     Data = str(Data)
     Data = Data[1:len(Data)]
     time.sleep(0.1)
